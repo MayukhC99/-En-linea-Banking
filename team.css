@@ -1,0 +1,40 @@
+.container-fluid #title .a3{
+    text-align: right;
+    text-shadow: 4px 4px 4px gray;
+}
+
+.container-fluid #title .a4{
+    text-shadow: 4px 4px 4px blue;
+}
+
+.container-fluid #title{
+    top: 20px;
+}
+
+.i1, .i2, .i3, .i4, .i5{
+    text-align: center;
+    top: 50px;
+}
+
+.i1 img, .i2 img, .i3 img, .i4 img, .i5 img{
+    box-shadow: 10px 10px 5px #ccc;
+    border-radius:25px;
+}
+
+#text1, #text2, #text3, #text4, #text5{
+    position: absolute;
+    top: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #ffffff;
+    border-radius:25px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 120px;
+}
+
+#text3{
+    transform: translateX(16%);
+}
