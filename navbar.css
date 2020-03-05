@@ -113,3 +113,74 @@ nav #check{
   }
 }
 
+
+/*Scss compiled for top arrows*/
+
+
+.container_arrows {
+  z-index: 1;
+  position: relative;
+  /* left: 10vw; */
+  top: -10vh;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* .ar {
+  top: 90vh;
+}
+
+.ar1 {
+  top: 190vh;
+}
+
+.ar3 {
+  top: 295vh;
+} */
+
+.content-ar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.content-ar p {
+  margin: 0 0 20px;
+}
+
+/* Arrow & Hover Animation */
+#more-arrows {
+  width: 75px;
+  height: 65px;
+}
+#more-arrows:hover polygon {
+  fill: rgb(8, 8, 8);
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+#more-arrows:hover polygon.arrow-bottom {
+  -webkit-transform: translateY(-18px);
+          transform: translateY(-18px);
+}
+#more-arrows:hover polygon.arrow-top {
+  -webkit-transform: translateY(18px);
+          transform: translateY(18px);
+}
+
+polygon {
+  fill: rgb(5, 5, 5);
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+polygon.arrow-middle {
+  opacity: 0.75;
+}
+polygon.arrow-top {
+  opacity: 0.5;
+}
+
+/*arrow ends*/
+

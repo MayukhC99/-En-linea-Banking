@@ -1,5 +1,41 @@
 $(document).ready(function(){
+
+    //Object for storing and tracking jquery navbar objects
+    navbar_obj={
+        trigger_home: $('.navMenu li:first-child a'),
+        trigger_about: $('.navMenu li:nth-child(2) a'),
+        trigger_services: $('.navMenu li:nth-child(3) a'),
+        trigger_team: $('.navMenu li:nth-child(4) a'),
+        trigger_contact: $('.navMenu li:nth-child(5) a')
+    }
+
+
+    //this flag is stored for tracking navbar active class
     let prev_nav_flag = $('.navMenu li:first-child a');
+
+    //for toggling navbar active class
+    $(".navMenu li a").click(function(){
+        prev_nav_flag.toggleClass('active');
+        prev_nav_flag = $(this);
+        $(this).toggleClass('active');
+    });
+
+    $("a .container_arrows").click(function(){
+        
+        prev_nav_flag.toggleClass('active');
+        let key= this.className.split(' ')[0];
+        prev_nav_flag= navbar_obj[key];
+        prev_nav_flag.toggleClass('active');
+        
+        // prev_nav_flag.toggleClass('active');
+        // if($(this).hasClass("ar"))
+        //     prev_nav_flag = $(".navMenu li:nth-child(2) a");
+        // else if($(this).hasClass("ar1"))
+        //     prev_nav_flag = $(".navMenu li:nth-child(3) a");
+        // else if($(this).hasClass("ar3"))
+        //     prev_nav_flag = $(".navMenu li:last-child a");
+        // prev_nav_flag.toggleClass('active');
+    });
 
     $(".p1").css("animation-play-state", "paused");
     $(".slide-up").css("animation-play-state", "paused");
@@ -33,22 +69,6 @@ $(document).ready(function(){
         pause: "false"
     });
 
-    $(".navMenu li a").click(function(){
-        prev_nav_flag.toggleClass('active');
-        prev_nav_flag = $(this);
-        $(this).toggleClass('active');
-    });
-
-    $("a .container_arrows").click(function(){
-        prev_nav_flag.toggleClass('active');
-        if($(this).hasClass("ar"))
-            prev_nav_flag = $(".navMenu li:nth-child(2) a");
-        else if($(this).hasClass("ar1"))
-            prev_nav_flag = $(".navMenu li:nth-child(3) a");
-        else if($(this).hasClass("ar3"))
-            prev_nav_flag = $(".navMenu li:last-child a");
-        prev_nav_flag.toggleClass('active');
-    });
 
     $(window).scroll(function(){
         if ($(window).scrollTop() + $(window).height() > $("#us").offset().top + 50) {
