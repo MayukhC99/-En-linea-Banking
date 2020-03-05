@@ -13,29 +13,23 @@ $(document).ready(function(){
     //this flag is stored for tracking navbar active class
     let prev_nav_flag = $('.navMenu li:first-child a');
 
-    //for toggling navbar active class
+    //for toggling navbar active class when navbar links are clicked
     $(".navMenu li a").click(function(){
         prev_nav_flag.toggleClass('active');
         prev_nav_flag = $(this);
         $(this).toggleClass('active');
     });
 
+    //for toggling navbar active class when triple arrows are clicked
     $("a .container_arrows").click(function(){
         
         prev_nav_flag.toggleClass('active');
         let key= this.className.split(' ')[0];
         prev_nav_flag= navbar_obj[key];
         prev_nav_flag.toggleClass('active');
-        
-        // prev_nav_flag.toggleClass('active');
-        // if($(this).hasClass("ar"))
-        //     prev_nav_flag = $(".navMenu li:nth-child(2) a");
-        // else if($(this).hasClass("ar1"))
-        //     prev_nav_flag = $(".navMenu li:nth-child(3) a");
-        // else if($(this).hasClass("ar3"))
-        //     prev_nav_flag = $(".navMenu li:last-child a");
-        // prev_nav_flag.toggleClass('active');
     });
+
+
 
     $(".p1").css("animation-play-state", "paused");
     $(".slide-up").css("animation-play-state", "paused");
@@ -70,6 +64,17 @@ $(document).ready(function(){
     });
 
 
+    function isScrolledIntoView(elem)
+    {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+
     $(window).scroll(function(){
         if ($(window).scrollTop() + $(window).height() > $("#us").offset().top + 50) {
             if ($(".image_about_us").offset().left < 0){
@@ -78,6 +83,24 @@ $(document).ready(function(){
                 $(".slide-up").css({'right': '0px', 'transition': 'all 0.9s ease-in-out'});
                 $(".slide-up").css("animation-play-state", "running");
             }
+        }
+
+        if (isScrolledIntoView($('.image_about_us'))){
+            prev_nav_flag.toggleClass('active');
+            prev_nav_flag= navbar_obj['trigger_about'];
+            prev_nav_flag.toggleClass('active');
+        } else if (isScrolledIntoView($('.home_fake_traversal'))){
+            prev_nav_flag.toggleClass('active');
+            prev_nav_flag= navbar_obj['trigger_home'];
+            prev_nav_flag.toggleClass('active');
+        } else if (isScrolledIntoView($('.team_fake_traversal'))){
+            prev_nav_flag.toggleClass('active');
+            prev_nav_flag= navbar_obj['trigger_team'];
+            prev_nav_flag.toggleClass('active');
+        } else if (isScrolledIntoView($('.contact_fake_traversal'))){
+            prev_nav_flag.toggleClass('active');
+            prev_nav_flag= navbar_obj['trigger_contact'];
+            prev_nav_flag.toggleClass('active');
         }
     });
     $(window).trigger( "scroll" );
