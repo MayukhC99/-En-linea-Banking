@@ -1,5 +1,6 @@
 $(document).ready(function(){
     let prev_nav_flag = $('.navMenu li:first-child a');
+    let i = 2;
 
     $(".p1").css("animation-play-state", "paused");
     $(".slide-up").css("animation-play-state", "paused");
@@ -88,4 +89,24 @@ $(document).ready(function(){
         $("#hide").css({'left': '250px', 'vertical-align': 'middle'});
         $("#hide").html($(".text5").html());
     });
+
+    $(".i1").on('click', function(){
+        var id = $(this).attr('id');
+        var m = id.charAt(4);
+        var n = parseInt(m);
+        i = n;
+    });
+
+    setInterval(function(){
+        if(i <= 5){
+            document.getElementById('tap-' + (i-1)).checked = false;
+            document.getElementById('tap-' + i).checked = true;
+        }
+        else{
+            document.getElementById('tap-5').checked = false;
+            i = 1;
+            document.getElementById('tap-' + i).checked = true;
+        }
+        i++;
+    },5000);
 });
