@@ -39,6 +39,8 @@
 
 
     <!--*************************************Carousel*************************************-->
+        <!--For fake nav traversal-->
+        <div class="home_fake_traversal" style="top:10vh;display:none;">fdfa</div>
 
         <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" style="height: 100vh;">
           <div class="carousel-inner">
@@ -54,7 +56,8 @@
           </div>
         </div>
 
-        <a href="#about"> <div class="container_arrows ar">
+        <!--trigger class should always be the first class in class attribute-->
+        <a href="#about"> <div class="trigger_about container_arrows">
           <div class="content-ar">
             <svg id="more-arrows">
               <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
@@ -107,8 +110,8 @@
             </div>
           </div>
         </div>
-
-        <a href="#"> <div class="container_arrows ar1">
+        <!--trigger class should always be the first class in class attribute-->
+        <a href="#"> <div class="trigger_services container_arrows">
           <div class="content-ar">
             <svg id="more-arrows">
               <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
@@ -123,10 +126,13 @@
 
     <!--*************************************Team*************************************-->
 
+    
     <div id="team">
       <div class="a3">
         <h1 id="para">&nbsp;&nbsp;Our&nbsp;&nbsp;<font color="blue" style="text-shadow: 4px 4px 4px blue;">Team</font></h1>
       </div>
+      <!--For fake nav traversal-->
+    <div class="team_fake_traversal" style="top:10vh;"></div>
       <div id="our">
         <div id="hide"></div>
         <div class="blog-card">
@@ -212,7 +218,8 @@
       </div>
     </div>
 
-        <a href="#contact"> <div class="container_arrows ar3">
+        <!--trigger class should always be the first class in class attribute-->
+        <a href="#contact"> <div class="trigger_contact container_arrows">
           <div class="content-ar">
             <svg id="more-arrows">
               <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
@@ -231,6 +238,8 @@
         <div class="a4">
           <h1 id="para">&nbsp;&nbsp;Contact&nbsp;&nbsp;<font color="blue" style="text-shadow: 4px 4px 4px blue;">Us</font></h1>
         </div>
+        <!--For fake nav traversal-->
+        <div class="contact_fake_traversal" style="top:10vh;"></div>
         <div id="contact_info">
           <div id="border"></div>
           <div id="contact_image">
