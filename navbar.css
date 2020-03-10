@@ -113,6 +113,12 @@ nav #check{
   }
 }
 
+@media (max-width: 374px){
+  nav label.logo{
+    font-size: large;
+  }
+}
+
 
 /*Scss compiled for top arrows*/
 

@@ -2,7 +2,8 @@
 
 #contact{
     overflow: hidden;
-    height: 900px;
+    height: 1040px;
+    width: 100vw;
 }
 
 .a4{
@@ -30,7 +31,7 @@
     position: relative;
     min-height: 300px;
     max-height: 700px;
-    width: 600px;
+    max-width: 600px;
     left: 20%;
     border-radius: 25px;
     text-align: center;
@@ -46,7 +47,7 @@
 	float:left;
 	padding:8px;
 	width:8%;
-    background: white
+    background: white;
     text-align: center;
 }
 
@@ -86,8 +87,10 @@
 }
 
 #contact_info{
-    width: 400px;
-    height: 50px;
+    position: absolute;
+    width: 95%;
+    max-width: 400px;
+    height: 700px;
     margin-left: 150px;
 }
 
@@ -148,4 +151,115 @@
 .extra{
     height: 100px;
     background-color: khaki;
+}
+
+@media (max-width: 1250px) {
+    .ccform{
+        width: 500px;
+        left: 25%;
+    }
+}
+
+@media (max-width: 1150px) {
+    .ccform{
+        width: 490px;
+        left: 16%;
+    }
+    #contact_info{
+        transform: translateX(-24%);
+    }
+}
+
+@media (max-width: 1000px) {
+    #contact{
+        height: 1550px;
+    }
+    .ccform{
+        transform: translateY(115%);
+        width: 500px;
+        left: 20%;
+    }
+    #contact_info{
+        transform: translateX(14%);
+    }
+}
+
+@media (max-width: 700px) {
+    #contact{
+        overflow: hidden;
+        width: 410px;
+    }
+    .ccform{
+        width: 370px;
+        left: 4%;
+    }
+    #contact_info{
+        transform: none;
+        margin-left: 4%;
+    }
+    #contact_image{
+        width: 90%;
+        object-fit: cover;
+    }
+    #border{
+        width: 82%;
+        height: 31%;
+        border-style: solid;
+        border-color: blacks;
+        transform: translate(12%, 20%);
+    }
+    #contact_image img{
+        width: 90%;
+        object-fit: contain;
+        background-size: cover;
+        background-position: center center;
+    }
+    #contact_image{
+        transform: translate(3%, -56%);
+    }
+    .ccformfield{
+        width: 80%;
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 400px) {
+    #contact{
+        overflow: hidden;
+        height: 1570px;
+        width: 100vw;
+    }
+    .ccform{
+        transform: translateY(100%);
+        width: 90vw;
+    }
+    #contact_info{
+        transform: none;
+        margin-left: 4%;
+    }
+    #contact_image{
+        width: 90%;
+        object-fit: cover;
+    }
+    #border{
+        width: 78%;
+        height: 24%;
+        border-style: solid;
+        border-color: blacks;
+        transform: translate(12%, 25%);
+    }
+    #contact_image img{
+        width: 85%;
+        object-fit: contain;
+    }
+    #contact_image{
+        transform: translate(3%, -50%);
+    }
+    .ccformfield{
+        width: 80%;
+        margin-left: 15%;
+    }
+    #call_us, #mail_us, #visit_us{
+        width: 50%;
+    }
 }

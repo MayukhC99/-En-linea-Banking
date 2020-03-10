@@ -12,6 +12,9 @@ $(document).ready(function(){
 
     //this flag is stored for tracking navbar active class
     let prev_nav_flag = $('.navMenu li:first-child a');
+    let i = 2;
+    let k = 0.1, l = 0, r = 0;
+    let window_width = $(window).width();
 
     //for toggling navbar active class when navbar links are clicked
     $(".navMenu li a").click(function(){
@@ -22,7 +25,6 @@ $(document).ready(function(){
 
     //for toggling navbar active class when triple arrows are clicked
     $("a .container_arrows").click(function(){
-        
         prev_nav_flag.toggleClass('active');
         let key= this.className.split(' ')[0];
         prev_nav_flag= navbar_obj[key];
@@ -55,6 +57,27 @@ $(document).ready(function(){
         }
         if ($(window).width() > 968) {
             $('#btnSide').css({ 'margin-left': '0px', 'display': 'inline' });
+
+            /*if(window_width > $(window).width()) {
+                if (r != 0){
+                    r = 0;
+                    k = -(k-0.1);
+                }
+                window_width = $(window).width();
+                $("#manage").css({'transform' : 'translateX(-' + k +'em)'});
+                k = k + 0.1;
+                l++;
+            }
+            else if(window_width < $(window).width()) {
+                if (l != 0){
+                    l = 0;
+                    k = -(k+0.1);
+                }
+                window_width = $(window).width();
+                $("#manage").css({'transform' : 'translateX(' + k +'em)'});
+                k = k + 0.1;
+                r++;
+            }*/
         }
     });
 
@@ -131,4 +154,24 @@ $(document).ready(function(){
         $("#hide").css({'left': '250px', 'vertical-align': 'middle'});
         $("#hide").html($(".text5").html());
     });
+
+    $(".i1").on('click', function(){
+        var id = $(this).attr('id');
+        var m = id.charAt(4);
+        var n = parseInt(m);
+        i = n;
+    });
+
+    setInterval(function(){
+        if(i <= 5){
+            document.getElementById('tap-' + (i-1)).checked = false;
+            document.getElementById('tap-' + i).checked = true;
+        }
+        else{
+            document.getElementById('tap-5').checked = false;
+            i = 1;
+            document.getElementById('tap-' + i).checked = true;
+        }
+        i++;
+    },5000);
 });
