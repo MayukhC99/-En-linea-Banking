@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="./navbar.css">
         <link rel="stylesheet" href="./Sidebar.css">
         <link rel="stylesheet" href="./About_us.css">
+        <link rel="stylesheet" href="./services.css">
         <link rel="stylesheet" href="./team.css">
         <link rel="stylesheet" href="./Contact_us.css">
         <link rel="stylesheet" href="./carousel.css">
@@ -29,7 +30,7 @@
           <ul class="navMenu">
               <li><a class="active" href="#">Home</a></li>
               <li><a href="#about">About Us</a></li>
-              <li><a href="#">Services</a></li>
+              <li><a href="#services">Services</a></li>
               <li><a href="#team">Team</a></li>
               <li><a href="#contact">Contact Us</a></li>
           </ul>
@@ -40,7 +41,7 @@
 
     <!--*************************************Carousel*************************************-->
         <!--For fake nav traversal-->
-        <div class="home_fake_traversal" style="top:10vh;display:none;">fdfa</div>
+        <div class="home_fake_traversal" style="top:10vh;display:none;"></div>
 
         <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" style="height: 100vh;">
           <div class="carousel-inner">
@@ -66,6 +67,8 @@
             </svg>
           </div>
         </div> </a>
+
+        <i id="start" class="fas fa-chevron-circle-up"></i>
 
     <!--***********************************************************************************-->
 
@@ -111,7 +114,7 @@
           </div>
         </div>
         <!--trigger class should always be the first class in class attribute-->
-        <a href="#"> <div class="trigger_services container_arrows">
+        <a href="#services"> <div class="trigger_services container_arrows">
           <div class="content-ar">
             <svg id="more-arrows">
               <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
@@ -120,6 +123,14 @@
             </svg>
           </div>
         </div> </a>
+
+    <!--***********************************************************************************-->
+
+    <!--*************************************Services*************************************-->
+
+        <div id="services">
+          <div class="services_fake_traversal" style="top:10vh;"></div>
+        </div>
 
     <!--***********************************************************************************-->
 
@@ -140,7 +151,7 @@
           <input type="radio" name="select" class="i1" id="tap-3">
           <input type="radio" name="select" class="i1" id="tap-4">
           <input type="radio" name="select" class="i1" id="tap-5">
-          <input type="checkbox" class="i1" id="tapImg">
+          <input type="checkbox" class="i2" id="tapImg">
           <div class="sliders">
             <label for="tap-1" class="tap tap-1"></label>
             <label for="tap-2" class="tap tap-2"></label>

@@ -28,6 +28,22 @@
     top: 50px;
 }
 
+#start{
+    color: orange;
+    z-index: 2000;
+    position: fixed;
+    top: 90vh;
+    left: 92vw;
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+#start:hover{
+    font-size: 35px;
+    color: coral;
+}
+
 @media (max-width: 768px){
     .carousel-inner{
         height: 100vh;
@@ -35,6 +51,10 @@
 
     .carousel-inner img{
         min-height: calc(100vh - 50px);
+    }
+
+    #start{
+        left: 85vw;
     }
 }
 
