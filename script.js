@@ -13,8 +13,7 @@ $(document).ready(function(){
     //this flag is stored for tracking navbar active class
     let prev_nav_flag = $('.navMenu li:first-child a');
     let i = 2;
-    let k = 0.1, l = 0, r = 0;
-    let window_width = $(window).width();
+    var tap_slide = 0;
 
     //for toggling navbar active class when navbar links are clicked
     $(".navMenu li a").click(function(){
@@ -29,6 +28,10 @@ $(document).ready(function(){
         let key= this.className.split(' ')[0];
         prev_nav_flag= navbar_obj[key];
         prev_nav_flag.toggleClass('active');
+    });
+
+    $("#start").click(function(){
+        $(window).scrollTop(0)
     });
 
 
@@ -57,27 +60,6 @@ $(document).ready(function(){
         }
         if ($(window).width() > 968) {
             $('#btnSide').css({ 'margin-left': '0px', 'display': 'inline' });
-
-            /*if(window_width > $(window).width()) {
-                if (r != 0){
-                    r = 0;
-                    k = -(k-0.1);
-                }
-                window_width = $(window).width();
-                $("#manage").css({'transform' : 'translateX(-' + k +'em)'});
-                k = k + 0.1;
-                l++;
-            }
-            else if(window_width < $(window).width()) {
-                if (l != 0){
-                    l = 0;
-                    k = -(k+0.1);
-                }
-                window_width = $(window).width();
-                $("#manage").css({'transform' : 'translateX(' + k +'em)'});
-                k = k + 0.1;
-                r++;
-            }*/
         }
     });
 
@@ -116,7 +98,11 @@ $(document).ready(function(){
             prev_nav_flag.toggleClass('active');
             prev_nav_flag= navbar_obj['trigger_home'];
             prev_nav_flag.toggleClass('active');
-        } else if (isScrolledIntoView($('.team_fake_traversal'))){
+        }else if (isScrolledIntoView($('.services_fake_traversal'))){
+            prev_nav_flag.toggleClass('active');
+            prev_nav_flag= navbar_obj['trigger_services'];
+            prev_nav_flag.toggleClass('active');
+        }else if (isScrolledIntoView($('.team_fake_traversal'))){
             prev_nav_flag.toggleClass('active');
             prev_nav_flag= navbar_obj['trigger_team'];
             prev_nav_flag.toggleClass('active');
@@ -124,6 +110,13 @@ $(document).ready(function(){
             prev_nav_flag.toggleClass('active');
             prev_nav_flag= navbar_obj['trigger_contact'];
             prev_nav_flag.toggleClass('active');
+        }
+
+        if($(window).scrollTop() > 200){
+            $("#start").css({'display': 'inline'});
+        }
+        else{
+            $("#start").css({'display': 'none'});
         }
     });
     $(window).trigger( "scroll" );
@@ -159,19 +152,34 @@ $(document).ready(function(){
         var id = $(this).attr('id');
         var m = id.charAt(4);
         var n = parseInt(m);
-        i = n;
+        i = n+1;
     });
 
-    setInterval(function(){
-        if(i <= 5){
-            document.getElementById('tap-' + (i-1)).checked = false;
-            document.getElementById('tap-' + i).checked = true;
+    $("#tapImg").on('click', function(){
+        if (tap_slide != null) {
+            clearInterval(tap_slide);
+            tap_slide = null;
+        } else {
+            tap_start();
         }
-        else{
-            document.getElementById('tap-5').checked = false;
-            i = 1;
-            document.getElementById('tap-' + i).checked = true;
-        }
-        i++;
-    },5000);
+    });
+
+    function tap_start(){
+        tap_slide = setInterval(function(){
+            if(i <= 5){
+                document.getElementById('tap-' + (i-1)).checked = false;
+                document.getElementById('tap-' + i).checked = true;
+            }
+            else{
+                document.getElementById('tap-5').checked = false;
+                i = 1;
+                document.getElementById('tap-' + i).checked = true;
+            }
+            i++;
+        },5000);
+    }
+
+    if(tap_slide != null){
+        tap_start();
+    }
 });
