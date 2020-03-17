@@ -55,6 +55,12 @@
     .image_about_us, .slide-up{
         transform: translateY(-20%);
     }
+
+    #cross{
+        position: relative;
+        top: -5%;
+        left: -3%;
+    }
 }
 
 @media (max-width: 768px){

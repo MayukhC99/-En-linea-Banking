@@ -53,12 +53,17 @@
 
 .ccformfield {
 	background:#FFFFFF;
-	border:none;
-	padding:15.5px;
-	width:91.9%;
-	display:block;
+	border: none;
+	padding: 15.5px;
+    width: 91.9%;
+    resize: none;
+	display: block;
 	font-family: 'Lato',Arial,sans-serif;
-	font-size:14px;
+	font-size: 14px;
+}
+
+textarea{
+    height: 30vh;
 }
 
 .ccformfield {
@@ -187,11 +192,16 @@
 @media (max-width: 700px) {
     #contact{
         overflow: hidden;
-        width: 410px;
+        height: 235vh;
     }
     .ccform{
-        width: 370px;
-        left: 4%;
+        transform: translateY(120%);
+        width: 80vw;
+        height: 92vh;
+        left: 10%;
+    }
+    textarea{
+        height: 20vh;
     }
     #contact_info{
         transform: none;
@@ -226,12 +236,22 @@
 @media (max-width: 400px) {
     #contact{
         overflow: hidden;
-        height: 1570px;
+        height: 220vh;
         width: 100vw;
     }
     .ccform{
-        transform: translateY(100%);
-        width: 90vw;
+        transform: translateY(100vh);
+        height: 90vh;
+    }
+    .ccheader{
+        height: 20vh;
+        font-size: small;
+    }
+    /*.ccfield-prepend{
+        height: 9vh;
+    }*/
+    textarea{
+        height: 17vh;
     }
     #contact_info{
         transform: none;
