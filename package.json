@@ -1,0 +1,23 @@
+{
+  "name": "en-linea-banking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SUPRATIMSAHA/En-linea-Banking.git"
+  },
+  "author": "Supratim Saha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SUPRATIMSAHA/En-linea-Banking/issues"
+  },
+  "homepage": "https://github.com/SUPRATIMSAHA/En-linea-Banking#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
